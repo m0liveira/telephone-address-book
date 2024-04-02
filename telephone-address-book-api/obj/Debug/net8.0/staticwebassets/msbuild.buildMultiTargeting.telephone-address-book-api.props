@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\telephone-address-book-api.props" />
+</Project>
