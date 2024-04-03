@@ -1,12 +1,22 @@
 using MySql.Data.MySqlClient;
 using System.Data;
+using dotenv.net;
 using Dapper;
 
 WebApplication app = WebApplication.Create();
 
 IDbConnection ConnectDB()
 {
-    return new MySqlConnection("Server=localhost;Uid=root;Password=<password>;Database=phonebook");
+    DotEnv.Load();
+
+    string server = Environment.GetEnvironmentVariable("DB_SERVER")!;
+    string user = Environment.GetEnvironmentVariable("DB_USER")!;
+    string password = Environment.GetEnvironmentVariable("DB_PASSWORD")!;
+    string database = Environment.GetEnvironmentVariable("DB_NAME")!;
+
+    string connection = $"Server={server};Uid={user};Password={password};Database={database}";
+
+    return new MySqlConnection(connection);
 }
 
 app.MapGet("/", () => "Status: 200");
