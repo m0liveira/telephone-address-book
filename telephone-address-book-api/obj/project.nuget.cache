@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "aa5jpCFZexmUnw4c1icb7csoAVIqxm2fjLXWGsI35WS5AeEzmviwfnrxGtY5Vbt97Iuuhefs/uUlxM4UsZfjgw==",
+  "dgSpecHash": "e6pe795YQCPRkNsjnWcj/pZdPpyGhDQfuU7s2br91Zkz54eoy7n2ekA3gjo5Gj3rqwz3E3YsyTRuXUXRoCgPxA==",
   "success": true,
   "projectFilePath": "C:\\Users\\mateu\\OneDrive\\Ambiente de Trabalho\\telephone-address-book\\telephone-address-book-api\\telephone-address-book-api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mateu\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
+    "C:\\Users\\mateu\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
+    "C:\\Users\\mateu\\.nuget\\packages\\dotenv.net\\3.1.3\\dotenv.net.3.1.3.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\k4os.compression.lz4\\1.3.5\\k4os.compression.lz4.1.3.5.nupkg.sha512",
