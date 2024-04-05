@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("telephone-address-book-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66763f8ab7a6dca32de9e92123305c32c4bdfc84")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d73aed17a2e538ce95c9c7346a3e9596fc7943f9")]
 [assembly: System.Reflection.AssemblyProductAttribute("telephone-address-book-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("telephone-address-book-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
