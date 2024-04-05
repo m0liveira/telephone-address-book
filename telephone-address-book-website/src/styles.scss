@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+// variables
+:root {
+  @media (prefers-color-scheme: dark) {
+    --background: hsl(206, 23%, 6%);
+    --shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.75);
+    --primary: hsl(203, 24%, 70%);
+    --secondary: hsl(240, 23%, 32%);
+    --accent: hsl(202, 85%, 44%);
+    --text: hsl(206, 33%, 96%);
+  }
+
+  --background: hsl(206, 23%, 94%);
+  --primary: hsl(203, 24%, 30%);
+  --secondary: hsl(240, 23%, 68%);
+  --accent: hsl(206, 53%, 61%);
+  --text: hsl(206, 23%, 6%);
+
+  --radius: 0.25rem;
+  --shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+
+  --montserrat: "Montserrat",
+  sans-serif;
+
+  --fs-100: 0.625rem; // 10px
+  --fs-200: 0.75rem; // 12px
+  --fs-300: 0.875rem; // 14px
+  --fs-400: 1rem; // 16px
+  --fs-500: 1.125rem; // 18px
+  --fs-600: 1.25rem; // 20px
+  --fs-700: 1.375rem; // 22px
+  --fs-800: 1.5625rem; // 25px
+}
+
+/* reset */
+*,
+*:after,
+*:before {
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--montserrat);
+  font-size: var(--fs-400);
+  font-weight: 400;
+  outline: none;
+}
+
+section {
+  background: var(--background);
+  width: calc(100vw - (100vw - 100%));
+  height: auto;
+  min-height: 100vh;
+  padding-top: 15vh;
+}

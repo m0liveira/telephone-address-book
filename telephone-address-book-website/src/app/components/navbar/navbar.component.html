@@ -1,0 +1,7 @@
+<nav>
+  <p>Telephone Address Book</p>
+
+  <ul>
+    <li *ngFor="let item of navList"><a [routerLink]="item.url" [routerLinkActive]="'active'">{{item.text}}</a></li>
+  </ul>
+</nav>
