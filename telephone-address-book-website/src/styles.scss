@@ -15,7 +15,7 @@
   --accent: hsl(206, 53%, 61%);
   --text: hsl(206, 23%, 6%);
 
-  --radius: 0.25rem;
+  --radius: 0.5rem;
   --shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
 
   --montserrat: "Montserrat",
@@ -40,6 +40,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: var(--text);
   font-family: var(--montserrat);
   font-size: var(--fs-400);
   font-weight: 400;
@@ -51,5 +52,92 @@ section {
   width: calc(100vw - (100vw - 100%));
   height: auto;
   min-height: 100vh;
-  padding-top: 15vh;
+  padding-top: 20vh;
+}
+
+.iti {
+  display: flex !important;
+  justify-content: flex-start;
+  align-items: center;
+  width: 15%;
+  height: 5vh;
+
+  .iti__country-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 100%;
+
+    button.iti__selected-country {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+
+      .iti__flag {
+        scale: 1.5;
+
+        .iti__a11y-text {
+          display: none;
+        }
+      }
+
+      .iti__arrow {
+        display: none;
+      }
+    }
+  }
+
+  .iti__tel-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 0 10% !important;
+    width: 75%;
+    height: 100%;
+  }
+}
+
+.home,
+.iti {
+  justify-content: flex-end;
+  width: 30%;
+  height: 100%;
+
+  .iti__country-container {
+    width: 15%;
+    height: 100%;
+
+    button.iti__selected-country {
+      background: none !important;
+      border: none;
+      padding: 0;
+      outline: none;
+
+      .iti__flag {
+        scale: 1.5;
+
+        .iti__a11y-text {
+          display: none;
+        }
+      }
+
+      .iti__arrow {
+        display: none;
+      }
+    }
+  }
+
+  .iti__tel-input {
+    background: none;
+    color: var(--text);
+    border: none;
+    padding: 0;
+    outline: none;
+    padding: 0 0 0 3% !important;
+    width: 65%;
+  }
 }
