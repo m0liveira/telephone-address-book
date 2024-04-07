@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 // libraries
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
+import { Ng2TelInputModule } from 'ng2-tel-input';
 
 // components
 import { HomeComponent } from '../app/components/home/home.component';
@@ -22,7 +23,8 @@ import { NavbarComponent } from '../app/components/navbar/navbar.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2TelInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

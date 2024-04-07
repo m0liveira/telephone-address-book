@@ -1,49 +1,41 @@
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
-</head>
-
-<section>
-  <div class="card">
+<section *ngIf="isLoaded">
+  <form class="card add" ngNativeValidate [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="box">
-      <p class="name">Jonas oliveira</p>
-      <input #phoneInput type="tel" class="home" [disabled]="true">
+      <input type="text" class="name" placeholder="First and Last name" formControlName="name"/>
+      <input class="iti__tel-input" type="text" ng2TelInput [ng2TelInputOptions]="{initialCountry: 'hr'}"
+        (countryChange)="countryChange($event)" />
     </div>
     <div class="box">
-      <p class="address"><span>Address:</span> rua xxx sadasdas gw</p>
-      <p class="email"><span>Email:</span> myemail@mev.hr</p>
+      <span>Address: <input type="text" class="address" placeholder="Ex: Street x of manchester"></span>
+      <span>Email: <input type="email" class="email" placeholder="myemail@mev.hr"></span>
+    </div>
+
+    <button type="submit">Add Data</button>
+  </form>
+
+  <div class="card" *ngFor="let card of this.bookApiService.data.data">
+    <div class="box">
+      <input type="text" class="name" [disabled]="isDisabled" value="{{card.first_name}} {{card.last_name}}" />
+      <input class="iti__tel-input" type="text" ng2TelInput [ng2TelInputOptions]="{initialCountry: selectedCountry}"
+        [disabled]="isDisabled" [value]="card.phone" />
+    </div>
+    <div class="box">
+      <span>Address: <input type="text" class="address" [disabled]="isDisabled" value="{{card.household}}"></span>
+      <span>Email: <input type="email" class="email" [disabled]="isDisabled" value="{{card.email}}"></span>
     </div>
   </div>
 
-  <div class="card">
-    <div class="box">
-      <p class="name">Jonas oliveira</p>
-      <input type="tel" #phoneInput>
-    </div>
-    <div class="box">
-      <p class="address">rua xxx sadasdas gw</p>
-      <p class="email">myemail@mev.hr</p>
-    </div>
+  <div class="skeleton__card" *ngIf="!isLoaded">
+    <div class="skeleton__text"></div>
+    <div class="skeleton__text"></div>
+    <div class="skeleton__text"></div>
   </div>
+</section>
 
-  <div class="card">
-    <div class="box">
-      <p class="name">Jonas oliveira</p>
-      <input type="tel" #phoneInput>
-    </div>
-    <div class="box">
-      <p class="address">rua xxx sadasdas gsssssssssssssssssssssssssssssssssssssssssssssssssw</p>
-      <p class="email">myemail@mev.hr</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="box">
-      <p class="name">Jonas oliveira</p>
-      <input type="tel" #phoneInput>
-    </div>
-    <div class="box">
-      <p class="address">rua xxx sadasdas gw</p>
-      <p class="email">myemail@mev.hr</p>
-    </div>
+<section *ngIf="!isLoaded">
+  <div class="skeleton__card">
+    <div class="skeleton__text"></div>
+    <div class="skeleton__text"></div>
+    <div class="skeleton__text"></div>
   </div>
 </section>

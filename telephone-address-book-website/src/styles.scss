@@ -2,17 +2,23 @@
 :root {
   @media (prefers-color-scheme: dark) {
     --background: hsl(206, 23%, 6%);
+    --skeleton: hsl(206, 23%, 9%);
+    --skeleton_scroller: hsla(0, 0%, 90%, 0.9);
     --shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.75);
     --primary: hsl(203, 24%, 70%);
     --secondary: hsl(240, 23%, 32%);
     --accent: hsl(202, 85%, 44%);
+    --accent25: hsla(202, 85%, 44%, 0.25);
     --text: hsl(206, 33%, 96%);
   }
 
   --background: hsl(206, 23%, 94%);
+  --skeleton: hsl(206, 23%, 84%);
+  --skeleton_scroller: hsla(0, 0%, 64%, 0.9);
   --primary: hsl(203, 24%, 30%);
   --secondary: hsl(240, 23%, 68%);
   --accent: hsl(206, 53%, 61%);
+  --accent25: hsla(206, 53%, 61%, 0.25);
   --text: hsl(206, 23%, 6%);
 
   --radius: 0.5rem;
@@ -57,19 +63,20 @@ section {
 
 .iti {
   display: flex !important;
-  justify-content: flex-start;
+  justify-content: flex-start !important;
   align-items: center;
-  width: 15%;
-  height: 5vh;
+  width: 25% !important;
+  height: 5vh !important;
 
-  .iti__country-container {
+  .iti__flag-container {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 25%;
     height: 100%;
+    padding: 0 !important;
 
-    button.iti__selected-country {
+    .iti__selected-flag {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -79,10 +86,6 @@ section {
 
       .iti__flag {
         scale: 1.5;
-
-        .iti__a11y-text {
-          display: none;
-        }
       }
 
       .iti__arrow {
@@ -101,32 +104,33 @@ section {
   }
 }
 
-.home,
 .iti {
-  justify-content: flex-end;
-  width: 30%;
-  height: 100%;
+  justify-content: flex-end !important;
+  width: 25% !important;
+  height: 100% !important;
 
   .iti__country-container {
-    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
     height: 100%;
+    cursor: default !important;
 
-    button.iti__selected-country {
+
+    .iti__selected-country {
       background: none !important;
       border: none;
       padding: 0;
       outline: none;
+      cursor: default !important;
 
       .iti__flag {
-        scale: 1.5;
-
-        .iti__a11y-text {
-          display: none;
-        }
+        scale: 1.75;
       }
 
       .iti__arrow {
-        display: none;
+        display: none !important;
       }
     }
   }
@@ -137,7 +141,46 @@ section {
     border: none;
     padding: 0;
     outline: none;
-    padding: 0 0 0 3% !important;
-    width: 65%;
+    padding: 0 0 0 5% !important;
+    width: 75%;
+    cursor: default !important;
+  }
+}
+
+.add {
+  .iti__country-container {
+    cursor: pointer !important;
+
+    .iti__selected-country {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+      cursor: pointer !important;
+
+      .iti__flag {
+        scale: 1.75;
+      }
+
+      .iti__arrow {
+        display: block !important;
+      }
+
+      .iti__dropdown-content {
+        background: var(--background) !important;
+
+        ul {
+          li {
+            .iti__country-name {
+              color: var(--text) !important;
+            }
+
+            .iti__dial-code {
+              color: var(--text) !important;
+            }
+          }
+        }
+      }
+    }
   }
 }

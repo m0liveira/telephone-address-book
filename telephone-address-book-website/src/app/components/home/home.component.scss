@@ -1,5 +1,4 @@
 section {
-  border: 1px solid red;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -28,17 +27,19 @@ section {
       width: 100%;
       height: 40%;
 
-      p {
+      input {
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        background: none;
+        color: var(--text);
+        border: none;
+        outline: none;
+        font-size: var(--fs-400);
         width: 65%;
         height: 100%;
-
-        span{
-          color: var(--primary);
-          margin-right: 1%;
-        }
+        padding: 0;
+        cursor: default !important;
       }
 
       .name {
@@ -50,15 +51,115 @@ section {
         align-items: flex-start;
         height: 55%;
 
-        .address,
-        .email {
-          font-size: var(--fs-300);
-          text-overflow: ellipsis;
-          overflow: hidden;
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          flex-direction: row;
+          color: var(--primary);
           width: 100%;
           height: 45%;
+
+          input {
+            font-size: var(--fs-300);
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 90%;
+            height: 100%;
+            margin-left: 1%;
+          }
         }
       }
     }
+  }
+
+  .add {
+    position: relative;
+
+    input {
+      width: 50% !important;
+    }
+
+    .iti__tel-input {
+      width: 70% !important;
+    }
+
+    span {
+      width: 65% !important;
+
+      input {
+        width: 100% !important;
+      }
+    }
+
+    button{
+      position: absolute;
+      top: 62%;
+      left: 72%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent);
+      color: var(--text);
+      box-shadow: 0 4px 15px 0 var(--accent25);
+      border: none;
+      border-radius: var(--radius);
+      width: 25%;
+      height: 25%;
+      cursor: pointer;
+    }
+  }
+
+  .skeleton__card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    width: 60%;
+    height: 25vh;
+    padding: 2%;
+    margin-bottom: 7%;
+
+    .skeleton__text {
+      background-image: linear-gradient(90deg, var(--skeleton) 0px, var(--skeleton_scroller) 40px, var(--skeleton) 80px);
+      background-size: 300%;
+      background-position: 100% 0;
+      border-radius: .35rem;
+      -webkit-animation: shimmer 1.5s infinite;
+      animation: shimmer 1.5s infinite;
+      width: 100%;
+      height: 20%;
+
+      &:nth-of-type(1) {
+        width: 35%;
+      }
+
+      &:nth-of-type(2) {
+        width: 60%;
+      }
+    }
+  }
+}
+
+input:enabled {
+  border-bottom: 2px solid var(--primary) !important;
+
+  &:focus {
+    border-color: var(--accent) !important;
+  }
+}
+
+
+@-webkit-keyframes shimmer {
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -100% 0;
   }
 }
