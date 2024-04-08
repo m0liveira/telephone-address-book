@@ -20,6 +20,9 @@ export class HomeComponent implements OnInit {
   countryChange(country: any) {
     let countryCodes = { dial: country.dialCode, country: country.iso2 };
 
+    // this.form.patchValue({
+    //   'phone': country.dialCode,
+    // });
     console.log(countryCodes);
   }
 
@@ -57,7 +60,48 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    console.log(this.form.value);
+  onSubmit(name: HTMLInputElement, phone: HTMLInputElement, address: HTMLInputElement, email: HTMLInputElement) {
+    if (!this.form.valid) {
+      return;
+    }
+
+    if (this.form.value.name == '') { name.classList.add('wrong'); return; }
+    if (this.form.value.phone == '') { phone.classList.add('wrong'); return; }
+    if (this.form.value.address == '') { address.classList.add('wrong'); return; }
+    if (this.form.value.email == '') { email.classList.add('wrong'); return; }
+
+    let nameParts = this.form.value.name.split(' ');
+    let fname = nameParts[0];
+    let lname = nameParts.length > 1 ? nameParts.slice(1).join(' ') : '';
+
+    let body = {
+      phone: this.form.value.phone,
+      first_name: fname,
+      last_name: lname,
+      household: this.form.value.address,
+      email: this.form.value.email
+    };
+
+    try {
+      this.bookApiService.postData(body).subscribe({
+        next: (result: HttpResponse<any>) => {
+          console.log(result.body);
+          this.isLoaded = false;
+        },
+        error: (err: any) => { console.error(err); },
+        complete: () => {
+          name.classList.remove('wrong');
+          phone.classList.remove('wrong');
+          address.classList.remove('wrong');
+          email.classList.remove('wrong');
+
+          this.form.patchValue({ 'name': '', 'phone': '', 'address': '', 'email': '' });
+
+          this.getBook();
+        }
+      });
+    } catch (error) {
+      console.error(error);
+    }
   }
 }

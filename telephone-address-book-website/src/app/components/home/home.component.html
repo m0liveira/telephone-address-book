@@ -1,13 +1,14 @@
 <section *ngIf="isLoaded">
-  <form class="card add" ngNativeValidate [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form class="card add" ngNativeValidate [formGroup]="form" (ngSubmit)="onSubmit(name, phone, address, email)">
     <div class="box">
-      <input type="text" class="name" placeholder="First and Last name" formControlName="name"/>
-      <input class="iti__tel-input" type="text" ng2TelInput [ng2TelInputOptions]="{initialCountry: 'hr'}"
-        (countryChange)="countryChange($event)" />
+      <input #name type="text" class="name" placeholder="First and Last name" formControlName="name" />
+      <input #phone class="iti__tel-input" type="text" ng2TelInput [ng2TelInputOptions]="{initialCountry: 'hr'}"
+        (countryChange)="countryChange($event)" formControlName="phone" />
     </div>
     <div class="box">
-      <span>Address: <input type="text" class="address" placeholder="Ex: Street x of manchester"></span>
-      <span>Email: <input type="email" class="email" placeholder="myemail@mev.hr"></span>
+      <span>Address: <input #address type="text" class="address" placeholder="Ex: Street x of manchester"
+          formControlName="address"></span>
+      <span>Email: <input #email type="email" class="email" placeholder="myemail@mev.hr" formControlName="email"></span>
     </div>
 
     <button type="submit">Add Data</button>
