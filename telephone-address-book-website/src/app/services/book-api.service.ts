@@ -10,6 +10,10 @@ export class BookAPIService {
   generatePDFUrl: string = `${this.host}/book/pdf`;
 
   data!: any;
+  search: Array<any> = [];
+  searchDisplay: Array<any> = [];
+  isSearch: boolean = false;
+
 
   constructor(private http: HttpClient) { }
 

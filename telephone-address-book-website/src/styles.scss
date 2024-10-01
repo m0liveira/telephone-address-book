@@ -1,31 +1,31 @@
 // variables
 :root {
-  @media (prefers-color-scheme: dark) {
-    --background: hsl(206, 23%, 6%);
-    --skeleton: hsl(206, 23%, 9%);
-    --skeleton_scroller: hsla(0, 0%, 90%, 0.9);
-    --shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.75);
-    --primary: hsl(203, 24%, 70%);
-    --secondary: hsl(240, 23%, 32%);
-    --accent: hsl(202, 85%, 44%);
-    --accent25: hsla(202, 85%, 44%, 0.25);
-    --text: hsl(206, 33%, 96%);
-  }
+  // @media (prefers-color-scheme: dark) {
+  //   --background: hsl(206, 23%, 6%);
+  //   --skeleton: hsl(206, 23%, 9%);
+  //   --skeleton_scroller: hsla(0, 0%, 90%, 0.9);
+  //   --shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.75);
+  //   --primary: hsl(203, 24%, 70%);
+  //   --secondary: hsl(240, 23%, 32%);
+  //   --accent: hsl(202, 85%, 44%);
+  //   --accent25: hsla(202, 85%, 44%, 0.25);
+  //   --text: hsl(206, 33%, 96%);
+  // }
 
   --background: hsl(206, 23%, 94%);
   --skeleton: hsl(206, 23%, 84%);
   --skeleton_scroller: hsla(0, 0%, 64%, 0.9);
   --primary: hsl(203, 24%, 30%);
   --secondary: hsl(240, 23%, 68%);
-  --accent: hsl(206, 53%, 61%);
-  --accent25: hsla(206, 53%, 61%, 0.25);
+  --accent: hsl(211, 100%, 54%);
+  --accent25: hsla(211, 100%, 54%, 0.25);
   --text: hsl(206, 23%, 6%);
 
   --radius: 0.5rem;
   --shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
 
   --montserrat: "Montserrat",
-  sans-serif;
+    sans-serif;
 
   --fs-100: 0.625rem; // 10px
   --fs-200: 0.75rem; // 12px
@@ -51,6 +51,7 @@
   font-size: var(--fs-400);
   font-weight: 400;
   outline: none;
+  scroll-behavior: smooth;
 }
 
 section {
@@ -58,7 +59,7 @@ section {
   width: calc(100vw - (100vw - 100%));
   height: auto;
   min-height: 100vh;
-  padding-top: 20vh;
+  padding-top: 15vh;
 }
 
 .iti {
@@ -106,11 +107,11 @@ section {
 
 .iti {
   justify-content: flex-end !important;
-  width: 25% !important;
+  width: 15% !important;
   height: 100% !important;
 
   .iti__country-container {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     width: 25%;
@@ -139,16 +140,25 @@ section {
     background: none;
     color: var(--text);
     border: none;
+    text-align: center;
     padding: 0;
     outline: none;
-    padding: 0 0 0 5% !important;
-    width: 75%;
+    padding: 0 !important;
+    width: 100% !important;
     cursor: default !important;
   }
 }
 
 .add {
+  .iti {
+    width: 63% !important;
+    margin-left: 2%;
+  }
+}
+
+.add {
   .iti__country-container {
+    display: none;
     cursor: pointer !important;
 
     .iti__selected-country {

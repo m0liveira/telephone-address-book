@@ -16,41 +16,43 @@ nav {
     font-weight: 600;
   }
 
-  ul {
+  .box {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    list-style: none;
-    width: 35%;
+    justify-content: space-between;
+    width: 50%;
     height: 100%;
 
-    li {
+    input {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 30%;
-      height: 100%;
+      background: none;
+      color: var(--text);
+      border: 1px solid var(--primary);
+      border-radius: 100rem;
+      outline: none;
+      font-size: var(--fs-400);
+      width: 50%;
+      height: 60%;
+      padding: 0 14% 0 2%;
+      cursor: default !important;
+    }
 
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--text);
-        font-weight: 500;
-        text-decoration: none;
-        width: 100%;
-        height: 100%;
-        transition: font-size 100ms ease-in-out;
-
-        &:hover{
-          font-size: var(--fs-500);
-          transition: all 100ms ease-in-out;
-        }
-      }
+    button {
+      position: absolute;
+      top: 20%;
+      left: 88%;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 0 100rem 100rem 0;
+      border: none;
+      outline: none;
+      font-weight: 500;
+      width: 12%;
+      height: 60%;
+      cursor: pointer;
     }
   }
-}
-
-.active{
-  color: var(--accent) !important;
 }
