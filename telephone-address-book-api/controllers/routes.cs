@@ -33,7 +33,6 @@ public static class Routes
             catch (Exception ex) { return Results.BadRequest(new { error = ex.Message }); }
         });
 
-
         app.MapGet("/book", async () => { return await BookManager.getBookData(); });
 
         app.MapGet("/book/{phone}", async (int phone) => { return await BookManager.getDataByPhone(phone); });
